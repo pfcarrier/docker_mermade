@@ -22,7 +22,8 @@ RUN mkdir /mermade && \
 # Fix typo that prevent execution on linux/macos
 RUN sed -i /mermade/kmer_counter.pl -e 's/Perl/perl/' && \
     sed -i /mermade/kmer_counter.pl -e 's/k:a/k:m:a/' && \
-    sed -i /mermade/db_creator.pl -e 's/ls \([^\`]*\)/find \1 -type f/'
+    sed -i /mermade/db_creator.pl -e 's/ls \([^\`]*\)/find \1 -type f/' && \
+    sed -i /mermade/db_creator.pl -e 's/\*//'
 
 RUN mkdir /work
 
