@@ -13,6 +13,12 @@ Install docker, then run the following :
   run_mermade.pl # should output the syntax
   ```
 
+If you are using docker-for-windows try the following instead to download the
+already build image and run it:
+  ```
+  docker run -v c:\full_path_to_your_fastq_file:/work -it pfcarrier/docker_mermade bash
+  ```
+
 # How to run mermade with your data
 Place the following in the same directory as this README.md file :
 * background.txt
