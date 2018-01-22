@@ -8,12 +8,15 @@ Mermade :
 # Quick startup
 Install docker, then run the following :
   ```
+  $ git clone https://github.com/pfcarrier/docker_mermade.git
+  $ cd docker_mermade
   $ ./build
   $ ./run # open a terminal in the container with your PWD mounted in /work
-  $ run_mermade.pl # should output the syntax
+  $ run_mermade.pl
   ```
+> The last command should output the syntax of the run_mermade.pl script
 
-If you are using docker-for-windows try the following instead to download the
+If you are using `docker-for-windows` try the following instead to download the
 already build image and run it:
   ```
   $ docker run -v c:\full_path_to_your_fastq_file:/work -it pfcarrier/docker_mermade bash
@@ -29,21 +32,24 @@ already build image and run it:
 > When you are inside the container the /work/ directory you are starting in
 > is a mount point to c:\full_path_to_your_fastq_file.  This allow mermade to
 > access any file that is there.  When inside the container You can run the "ls"
-> command to confirm that ; you should see the file it contain listed in the 
+> command to confirm that ; you should see the file it contain listed in the
 > output.
 
 # How to run mermade with your data
-Place the following in the same directory as this README.md file :
+Place the following file in the directory that the container have access to, if
+you are using `docker-for-windows` this will be c:\full_path_to_your_fastq_file,
+if you are using linux this will be the location where you cloned this repos. This
+location is referd later in this document as the `work` directory.
 * background.txt
 * barcode.csv
 * sequencefile.fastq.gz
 
-Then run the following within the container work directory. E.g.
+Run the following within the container work directory. E.g.
   ```
   $ rm -rf mermade_output.db wdir
   $ run_mermade.pl -o mermade_output.db -d wdir -b background.txt PRO1071_S1_libDNA_raw_NoIndex_L001_R1.fastq barcode.csv
 
-  # Using test file provided as example
+  # Using test file provided by the `Korf Lab` ( see below for download link )
   $ rm -rf mermade_output.db wdir
   $ run_mermade.pl -o mermade_output.db -d wdir -b background.txt BnS13.fastq BnS13-barcodes.csv
   ```
@@ -55,8 +61,8 @@ From within the container run
   ^^ if you run again change report_output_1 for report_output_2 and so on
   ```
 
-You can then view the generated reports by open the following with your browser,
-within the directory where this README.md file is
+You can view the generated reports by opening the following file with your browser.
+The file is located in the `work` directory.
 * report_output_1/index.html
 
 # Test data to play with mermade
