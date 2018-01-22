@@ -31,7 +31,7 @@ already build image and run it:
 >
 > When you are inside the container the /work/ directory you are starting in
 > is a mount point to c:\full_path_to_your_fastq_file.  This allow mermade to
-> access any file that is there.  When inside the container You can run the "ls"
+> access any file that is there.  When inside the container You can run the `ls`
 > command to confirm that ; you should see the file it contain listed in the
 > output.
 
@@ -58,7 +58,7 @@ Run the following within the container work directory. E.g.
 From within the container run
   ```
   $ reporter.pl mermade_output.db 5 report_output_1 AAA AAC AAG AAT ACA
-  ^^ if you run again change report_output_1 for report_output_2 and so on
+  # ^^ if you run again change report_output_1 for report_output_2 and so on
   ```
 
 You can view the generated reports by opening the following file with your browser.
@@ -67,7 +67,7 @@ The file is located in the `work` directory.
 
 # Test data to play with mermade
 * http://korflab.ucdavis.edu/Datasets/BindNSeq/
-* You will need :
+You will need :
 * http://korflab.ucdavis.edu/Datasets/BindNSeq/background.txt.gz
 * http://korflab.ucdavis.edu/Datasets/BindNSeq/BnS13-barcodes.csv
 * http://korflab.ucdavis.edu/Datasets/BindNSeq/BnS13.fastq.gz
