@@ -1,0 +1,30 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+h1 {
+	font-family: Arial;
+	font-size:18pt;
+	margin: 8px 8px 0px 8px;
+}
+
+table {
+	border-collapse: collapse;
+	margin: 8px;
+	padding: 0px;
+	font-family: Arial;
+	font-size: 10pt;
+	text-align: center;
+}
+
+tr:nth-child(2n+1){
+	background-color: #EEEEEE;
+}
+
+td {
+	padding: 5px 10px 5px 10px;
+	border-style: solid;
+	border-width: 1px;
+
+}

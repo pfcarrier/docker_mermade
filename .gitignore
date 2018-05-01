@@ -4,6 +4,7 @@
 /*.csv
 /*.txt
 /*report*/
+!report_output_example
 /wdir/
 *.crdownload
 /*.fastq
