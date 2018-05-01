@@ -10,7 +10,9 @@ RUN apt-get update && \
       libimage-magick-perl \
       sqlite3 \
       libdbd-sqlite3-perl \
-      less
+      less \
+      gcc \
+      make
 
 # github repo of the mermade project https://github.com/KorfLab/Mermade
 RUN mkdir /mermade && \
@@ -24,6 +26,10 @@ RUN sed -i /mermade/kmer_counter.pl -e 's/Perl/perl/' && \
     sed -i /mermade/kmer_counter.pl -e 's/k:a/k:m:a/' && \
     sed -i /mermade/db_creator.pl -e 's/ls \([^\`]*\)/find \1 -type f/' && \
     sed -i /mermade/db_creator.pl -e 's/\*//'
+
+# Recompile motifamatic for a linux target
+RUN cd /mermade && \
+    make
 
 RUN mkdir /work
 
