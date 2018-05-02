@@ -25,8 +25,7 @@ already build image and run it:
 > In the command above "c:\full_path_to_your_fastq_file" is usually replaced with
 > the directory on your laptop that contain your sequence ( E.g. xxxxx.fastq) file.
 >
-> Note that the fastq file need to be uncompressed, mermade cannot coop
-> with .gz ; the directory should also contain the barcode.txt and background.txt
+> Note that the directory should also contain the barcode.txt and background.txt
 > file.
 >
 > When you are inside the container the /work/ directory you are starting in
@@ -47,11 +46,11 @@ location is referd later in this document as the `work` directory.
 Run the following within the container work directory. E.g.
   ```
   $ rm -rf mermade_output.db wdir
-  $ run_mermade.pl -o mermade_output.db -d wdir -b background.txt PRO1071_S1_libDNA_raw_NoIndex_L001_R1.fastq barcode.csv
+  $ run_mermade.pl -o mermade_output.db -d wdir -b background.txt PRO1071_S1_libDNA_raw_NoIndex_L001_R1.fastq.gz barcode.csv
 
   # Using test file provided by the `Korf Lab` ( see below for download link )
   $ rm -rf mermade_output.db wdir
-  $ run_mermade.pl -o mermade_output.db -d wdir -b background.txt BnS13.fastq BnS13-barcodes.csv
+  $ run_mermade.pl -o mermade_output.db -d wdir -b background.txt BnS13.fastq.gz BnS13-barcodes.csv
   ```
 
 # How to generate a report
